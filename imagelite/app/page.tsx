@@ -5,8 +5,9 @@ export default function Home() {
     <div>
       <main>
         <h1>Welcome</h1>
-        <PrimeiroComponente />
-
+        <PrimeiroComponente 
+        mensagem = "Esta é a mensagem."
+        mensagemBotao="Você clicou no botão!"/>
       </main>
     </div>
   );
