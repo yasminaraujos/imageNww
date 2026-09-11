@@ -1,4 +1,5 @@
 package io.spring.image.demo.application;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,7 +11,6 @@ public class ImageDTO {
     private String url;
     private String name;
     private String extension;
-    private String size;
+    private Long size;
     private LocalDate uploadDate;
-
 }
