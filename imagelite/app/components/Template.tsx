@@ -6,19 +6,21 @@ interface TemplateProps {
 
 export const Template = ({ children }: TemplateProps) => {
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-purple-200 via-purple-900 to-black text-white flex flex-col justify-between">
       <Header />
-      {children}
+      <main className="flex-1">
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-pink-300 text-white p-4">
+    <header className="bg-pink-300 text-white p-4 shadow-md">
       <div className="container mx-auto px-4 flex justify-center items-center">
-        <h1>Image Lite</h1>
+        <h1 className="text-xl font-bold">Image Lite</h1>
       </div>
     </header>
   );

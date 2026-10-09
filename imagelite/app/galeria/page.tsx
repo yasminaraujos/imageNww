@@ -3,8 +3,11 @@ import { Template, ImageCard } from '../components';
 import { ImageService, useImageService } from '../resource/service';
 import { useState } from 'react'; // Corrigida a aspa simples aqui
 import { Image } from '../resource/image';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components';
 
 export default function Galeria() {
+    const router = useRouter();
     const useService = useImageService();
     const [images, setImages] = useState<Image[]>([]);
     const [query, setQuery] = useState<string>('');
@@ -66,8 +69,8 @@ export default function Galeria() {
                         </select>
 
                         <button 
-                            className={`flex items-center gap-2 bg-pink-300 border border-[#39ff14] text-white font-bold py-2 px-4 rounded-lg
-                                       shadow-[0_0_10px_rgba(57,255,20,0.4)] hover:bg-purple-600 transition-all duration-300
+                            className={`flex items-center gap-2 bg-pink-300 text-white font-bold py-2 px-4 rounded-lg
+                                       shadow-[0_0_10px_rgba(57,255,20,0.4)] hover:bg-pink-400 transition-all duration-300
                                        ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                             onClick={searchImages}
                             disabled={loading} // Impede múltiplos cliques enquanto carrega
@@ -86,9 +89,13 @@ export default function Galeria() {
                             )}
                         </button>
                         
-                        <button className="bg-pink-600 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition-all">
+                        <Button
+                            type="button"
+                            variant="danger"
+                            onClick={() => router.push('/upload')}
+                            >
                             Add New
-                        </button>
+                        </Button>
                     </div>
                 </section>
 
