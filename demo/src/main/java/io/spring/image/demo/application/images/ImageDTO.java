@@ -1,5 +1,4 @@
 package io.spring.image.demo.application.images;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
@@ -16,3 +15,4 @@ public class ImageDTO {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate uploadDate;
 }
+
